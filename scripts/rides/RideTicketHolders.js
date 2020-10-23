@@ -1,12 +1,15 @@
-import { TicketBooth } from "../TicketBooth.js"
+
 
 const contentTarget = document.querySelector(".rides")
 const eventHub = document.querySelector("#state-fair")
 
-export const RideTicketHolders = () => {
-    eventHub.addEventListener("rideTicketPurchased", customEvent => {
+export const RideTicketHolders = ( ) => {
+    eventHub.addEventListener("rideTicketPurchased", clickEvent  => {
+        contentTarget.innerHTML += `
         
-    })
-}
-
-const render = (rideTickets) =>
+         <div class="rider person">
+         </div>
+         
+        `
+    }
+    )}
