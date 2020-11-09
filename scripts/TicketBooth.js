@@ -1,3 +1,5 @@
+
+
 const contentTarget = document.querySelector(".entry")
 const eventHub = document.querySelector("#state-fair")
 
@@ -42,7 +44,14 @@ eventHub.addEventListener("click", customEvent => {
         })
         eventHub.dispatchEvent(showEvent)
     }
-
+    else if (customEvent.target.id === ("fullPackage")) {
+        const packageEvent = new CustomEvent("fullPackagePurchased", {
+            detail: {
+                ticket: "fullPackage"
+            }
+        })
+        eventHub.dispatchEvent(packageEvent)
+    }
    
 })
 
@@ -54,6 +63,7 @@ export const TicketBooth = () => {
            <button id="foodTicket">Food Ticket</button>
            <button id="gameTicket">Game Ticket</button>
            <button id="showTicket">Sideshow Ticket</button>
+           <button id="fullPackage">Full Package Ticket</button>
         </div>
         
     `
